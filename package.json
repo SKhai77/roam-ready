@@ -1,5 +1,5 @@
 {
-  "name": "roam-ready",
+  "name": "roam-ready-app",
   "version": "1.0.0",
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "server/server.js",
