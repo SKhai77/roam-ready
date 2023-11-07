@@ -1,0 +1,52 @@
+[
+  {
+    "title":"stack",
+    "body": "i think am about to become a full stack developer what you all think?",
+    "username": "Brian Kernighan"
+  },
+  {
+    "title":"Habitat",
+    "body": "organize the world's tallest trees into a table by habitat .",
+    "username": "Max Kanat-Alexander"
+  },
+  {
+    "title":"funny thing",
+    "body": "Write a joke that my coworker would find funny.",
+    "username": "Why The Lucky Stiff"
+  },
+  {
+    "title":"Looks Great",
+    "body": "I'm not a great programmer; I'm just a good programmer with great habits.",
+    "username": "Kent Beck"
+  },
+  {
+    "title":"my first post",
+    "description": "Walking on water and developing software from a specification are easy if both are frozen.",
+    "username": "Edward V. Berard"
+  },
+  {
+    "title":"learning Programming",
+    "description": "The most disastrous thing that you can ever learn is your first programming language.",
+    "username": "Alan Kay"
+  },
+  {
+    "title":"accomplishment",
+    "body": "The most important property of a program is whether it accomplishes the intention of its user.",
+    "username": "C.A.R. Hoare"
+  },
+  {
+    "title":"my first post",
+    "body": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
+    "username": "David Thomas"
+  },
+  {
+    "title":"Unhappy",
+    "body": "If you optimize everything, you will always be unhappy.",
+    "username": "Donald Knuth"
+  },
+  {
+    "title":"document",
+    "body": "It's not a bug; it's an undocumented feature.",
+    "username": "Lernantino"
+  }
+]
