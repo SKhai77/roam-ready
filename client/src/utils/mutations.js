@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+// Mutation for user login
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -12,6 +13,7 @@ export const LOGIN_USER = gql`
   }
 `;
 
+// Mutation for adding a new user
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -24,12 +26,13 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+// Mutation for adding a new post
+export const ADD_POST = gql`
+  mutation addPost($postText: String!) {
+    addPost(postText: $postText) {
       _id
-      thoughtText
-      thoughtAuthor
+      postText
+      postAuthor
       createdAt
       comments {
         _id
@@ -39,12 +42,13 @@ export const ADD_THOUGHT = gql`
   }
 `;
 
+// Mutation for adding a comment
 export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
+  mutation addComment($postId: ID!, $commentText: String!) {
+    addComment(postId: $postId, commentText: $commentText) {
       _id
-      thoughtText
-      thoughtAuthor
+      postText
+      postAuthor
       createdAt
       comments {
         _id
@@ -54,3 +58,25 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+// Mutation for removing a post
+export const REMOVE_POST = gql`
+  mutation removePost($postId: ID!) {
+    removePost(postId: $postId) {
+      _id
+    }
+  }
+`;
+
+// Mutation for removing a comment
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($postId: ID!, $commentId: ID!) {
+    removeComment(postId: $postId, commentId: $commentId) {
+      _id
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
