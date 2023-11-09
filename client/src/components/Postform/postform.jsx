@@ -10,6 +10,7 @@ function PostForm() {
   const { values, onChange, onSubmit } = useForm(createPostCallback, {
     body: ''
   });
+  
 
   const [createPost, { error }] = useMutation(CREATE_POST, {
     variables: values,
@@ -28,6 +29,8 @@ function PostForm() {
   }
 
   return (
+    <>
+    {Auth.loggedIn() ? (
     <>
       <Form onSubmit={onSubmit}>
         <h2>Create a post:</h2>
@@ -51,6 +54,17 @@ function PostForm() {
           </ul>
         </div>
       )}
+      
+      </> 
+      ) : (
+        <p>
+          You need to be logged in to share your thoughts. Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
     </>
+
   );
 }
+
+export default PostForm;
