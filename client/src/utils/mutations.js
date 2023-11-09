@@ -27,17 +27,27 @@ export const ADD_USER = gql`
 `;
 
 // Mutation for adding a new post
-export const ADD_POST = gql`
-  mutation addPost($postText: String!) {
-    addPost(postText: $postText) {
-      _id
-      postText
-      postAuthor
+ export const CREATE_POST = gql`
+  mutation createPost($title: String!, $description:Sting!, $image: String) {
+    createPost($title: title!, $description:description!, $image:image) {
+      id
+      title
+      description
+      image
       createdAt
-      comments {
-        _id
-        commentText
+      username
+      likes {
+        id
+        username
+        createdAt
       }
+      comments {
+        id
+        body
+        username
+        createdAt
+      }
+
     }
   }
 `;
