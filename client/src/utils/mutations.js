@@ -1,5 +1,4 @@
-import { gql } from '@apollo/client';
-
+import { gql } from "@apollo/client";
 // Mutation for user login
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -12,7 +11,6 @@ export const LOGIN_USER = gql`
     }
   }
 `;
-
 // Mutation for adding a new user
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
@@ -25,33 +23,23 @@ export const ADD_USER = gql`
     }
   }
 `;
-
 // Mutation for adding a new post
- export const CREATE_POST = gql`
-  mutation createPost($title: String!, $description:Sting!, $image: String) {
-    createPost($title: title!, $description:description!, $image:image) {
-      id
-      title
-      description
-      image
+export const ADD_POST = gql`
+  mutation addPost($postTitle: String, $postImage: String, $postText: String!) {
+    addPost(postTitle: $postTitle, postImage: $postImage, postText: $postText) {
+      _id
+      postTitle
+      postImage
+      postText
+      posttAuthor
       createdAt
-      username
-      likes {
-        id
-        username
-        createdAt
-      }
       comments {
-        id
-        body
-        username
-        createdAt
+        _id
+        commentText
       }
-
     }
   }
 `;
-
 // Mutation for adding a comment
 export const ADD_COMMENT = gql`
   mutation addComment($postId: ID!, $commentText: String!) {
@@ -68,7 +56,6 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
-
 // Mutation for removing a post
 export const REMOVE_POST = gql`
   mutation removePost($postId: ID!) {
@@ -89,4 +76,3 @@ export const REMOVE_COMMENT = gql`
     }
   }
 `;
-
