@@ -1,4 +1,4 @@
-## Project Title
+# Project Title
 
 Roam Ready – An Interactive Travel Blog Application
 
@@ -8,24 +8,24 @@ Roam Ready is an advanced and interactive travel blog application designed for s
 
 ## Table of Contents
 
-1. User Story
-2. Acceptance Criteria
-3. Technologies Used
-4. Installation
-5. Usage
-6. License
-7. Contributing
-8. Tests
-9. Questions
-10. Demo
+- [1. User Story](#user-story)
+- [2. Acceptance Criteria](#acceptance-criteria)
+- [3. Technologies Used](#technologies-used)
+- [4. Installation](#installation)
+- [5. Usage](#usage)
+- [6. License](#license)
+- [7. Contributing](#contributing)
+- [8. Tests](#tests)
+- [9. Questions](#questions)
+- [10. Demo](#demo)
 
-### User Story:
+## User Story
 
 As a travel enthusiast,
 I want to post my travel stories and experiences on the blog, and read others' travel blogs,
 So that I can share and learn about different travel experiences, destinations, and tips.
 
-### Acceptance Criteria:
+## Acceptance Criteria
 
 Given I am on the Travel Blog app's homepage, 
 When I want to see the latest travel stories, 
