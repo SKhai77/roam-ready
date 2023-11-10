@@ -49,7 +49,7 @@ const typeDefs = `
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
-    addlike(postID: ID!): Post
+    likePost(postID: ID!): Post
   }
 `;
 
