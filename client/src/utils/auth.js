@@ -1,61 +1,39 @@
-import decode from 'jwt-decode';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { LOGIN_USER, ADD_USER } from './mutations';
+import decode from "jwt-decode";
 
 class AuthService {
-  constructor() {
-    // Initialize Apollo Client
-    this.client = new ApolloClient({
-      uri: 'YOUR_GRAPHQL_ENDPOINT', // Set your GraphQL endpoint here
-      cache: new InMemoryCache(),
-    });
-  }
-
-  // Decode JWT to get user data
   getProfile() {
     return decode(this.getToken());
   }
 
-  // Check if user is logged in
   loggedIn() {
     const token = this.getToken();
-    return token && !this.isTokenExpired(token);
+    // If there is a token and it's not expired, return `true`
+    return token && !this.isTokenExpired(token) ? true : false;
   }
 
-  // Check if token is expired
   isTokenExpired(token) {
+    // Decode the token to get its expiration time that was set by the server
     const decoded = decode(token);
-    return decoded.exp < Date.now() / 1000;
+    // If the expiration time is less than the current time (in seconds), the token is expired and we return `true`
+    if (decoded.exp < Date.now() / 1000) {
+      localStorage.removeItem("id_token");
+      return true;
+    }
+    // If token hasn't passed its expiration time, return `false`
+    return false;
   }
 
-  // Retrieve token from local storage
   getToken() {
-    return localStorage.getItem('id_token');
+    return localStorage.getItem("id_token");
   }
 
-  // Log in user and save token
-  async login(email, password) {
-    const { data } = await this.client.mutate({
-      mutation: LOGIN_USER,
-      variables: { email, password }
-    });
-    localStorage.setItem('id_token', data.login.token);
-    window.location.assign('/');
+  login(idToken) {
+    localStorage.setItem("id_token", idToken);
+    window.location.assign("/");
   }
 
-  // Register user and save token
-  async register(username, email, password) {
-    const { data } = await this.client.mutate({
-      mutation: ADD_USER,
-      variables: { username, email, password }
-    });
-    localStorage.setItem('id_token', data.addUser.token);
-    window.location.assign('/');
-  }
-
-  // Log out user
   logout() {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem("id_token");
     window.location.reload();
   }
 }
