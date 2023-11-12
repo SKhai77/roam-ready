@@ -34,13 +34,11 @@ const postSchema = new Schema({
     {
       commentText: {
         type: String,
-        required: true,
         minlength: 1,
         maxlength: 280,
       },
       commentAuthor: {
         type: String,
-        required: true,
       },
       createdAt: {
         type: Date,
@@ -53,7 +51,6 @@ const postSchema = new Schema({
     {
       postAuthor: {
         type: String,
-        required: true,
         trim: true,
       },
       createdAt: {
@@ -62,11 +59,7 @@ const postSchema = new Schema({
         get: (timestamp) => dateFormat(timestamp),
       },
     },
-  ],
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
+  ]
 });
 
 const Post = model("Post", postSchema);
