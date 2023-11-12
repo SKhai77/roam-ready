@@ -2,29 +2,27 @@
 const typeDefs = `
   # Defining a "User" type with it values
   type User {
-    _id: ID
+    _id: ID!
     username: String
     email: String
-    password: String
-    posts: [Post]!
+    posts: [Post]
   }
 
   # Defining "Post" type with it values
   type Post {
-    _id: ID
+    _id: ID!
     postTitle: String
     postImage: String
     postText: String
     postAuthor: String
     createdAt: String
-    comments: [Comment]!
+    comments: [Comment]
   }
 
   # Defining "Comment" type with it values
   type Comment {
-    _id: ID
-    commentText: String
-    commentAuthor: String
+    commentText: String!
+    commentAuthor: String!
     createdAt: String
   }
 
@@ -47,9 +45,9 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPost(postTitle: String!, postImage, postText: String!): Post
+    addPost(postTitle: String!, postImage: String, postText: String!): User
     addComment(postId: ID!, commentText: String!): Post
-    removePost(postId: ID!): Post
+    removePost(postId: ID!): User
     removeComment(postId: ID!, commentId: ID!): Post
     likePost(postID: ID!): Post
   }
