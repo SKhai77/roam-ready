@@ -49,9 +49,11 @@ const postSchema = new Schema({
   ],
   likes: [
     {
-      postAuthor: {
+      likeText: {
         type: String,
-        trim: true,
+      },
+      likeAuthor: {
+        type: String,
       },
       createdAt: {
         type: Date,
@@ -59,7 +61,7 @@ const postSchema = new Schema({
         get: (timestamp) => dateFormat(timestamp),
       },
     },
-  ]
+  ],
 });
 
 const Post = model("Post", postSchema);
