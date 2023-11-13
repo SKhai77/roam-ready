@@ -36,7 +36,19 @@ export const ADD_POST = gql`
       comments {
         _id
         commentText
+      },
+      likes {
+        _id
+        likeText
       }
+    }
+  }
+`;
+// Mutation for removing a post
+export const REMOVE_POST = gql`
+  mutation removePost($postId: ID!) {
+    removePost(postId: $postId) {
+      _id
     }
   }
 `;
@@ -56,21 +68,38 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
-// Mutation for removing a post
-export const REMOVE_POST = gql`
-  mutation removePost($postId: ID!) {
-    removePost(postId: $postId) {
-      _id
-    }
-  }
-`;
-
 // Mutation for removing a comment
 export const REMOVE_COMMENT = gql`
   mutation removeComment($postId: ID!, $commentId: ID!) {
     removeComment(postId: $postId, commentId: $commentId) {
       _id
       comments {
+        _id
+      }
+    }
+  }
+`;
+// Mutation for adding a like
+export const ADD_LIKE = gql`
+  mutation addLike($postId: ID!, $likeText: String!) {
+    addLike(postId: $postId, likeText: $likeText) {
+      _id
+      postText
+      postAuthor
+      createdAt
+      likes {
+        _id
+        likeText
+        createdAt
+      }
+    }
+  }
+`;
+// Mutation for removing a like
+export const REMOVE_LIKE = gql`
+  mutation removeLike($postId: ID!, $likeId: ID!) {
+    removeLike(postId: $postId, likeId: $likeId) {
+      likes {
         _id
       }
     }
