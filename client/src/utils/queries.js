@@ -47,6 +47,12 @@ export const QUERY_SINGLE_POST = gql`
         commentText
         commentAuthor
         createdAt
+      },
+      likes {
+        _id
+        likeText
+        likeAuthor
+        createdAt
       }
     }
   }
