@@ -12,9 +12,9 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Your Blog</h1>
+            <h1 className="m-0">Roam Ready</h1>
           </Link>
-          <p className="m-0">What is in your mind.</p>
+          <p className="m-0">Get into the best experience of a traveller.</p>
         </div>
         <div>
           {Auth.loggedIn() ? (

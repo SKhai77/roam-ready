@@ -24,12 +24,23 @@ const SinglePost = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {post.postAuthor} <br />
+        <span className="postTitle">{post.postTitle}</span>
+        <br />
+
+        <span style={{ fontSize: "1.3rem" }}>{post.postAuthor} </span>
+
         <span style={{ fontSize: "1rem" }}>
           had this blog post on {post.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
+        {post.postImage && (
+          <img
+            src={post.postImage}
+            alt={`Image for ${post.postTitle} by ${post.postAuthor}`}
+            style={{ maxWidth: "100%" }}
+          />
+        )}
         <blockquote
           className="p-4"
           style={{

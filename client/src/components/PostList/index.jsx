@@ -1,15 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const PostList = ({
-  
+  posts,
   title,
-  description,
-  image,
   showTitle = true,
   showUsername = true,
 }) => {
-  if (!post.length) {
-    return <h3>No Post Yet</h3>;
+  if (!posts.length) {
+    return <h3>No Posts Yet</h3>;
   }
 
   return (
@@ -22,33 +20,30 @@ const PostList = ({
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/profiles/${post.title}`}
+                  to={`/profiles/${post.postAuthor}`}
                 >
-                  {post.title} <br />
-                  <span style={{ fontSize: '1rem' }}>
+                  {post.postAuthor} <br />
+                  <span style={{ fontSize: "1rem" }}>
                     had this post on {post.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
-                  <span style={{ fontSize: '1rem' }}>
+                  <span style={{ fontSize: "1rem" }}>
                     You had this post on {post.createdAt}
                   </span>
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{post.image}</p>
+              <p>{post.postImage}</p>
+              <p>{post.postText}</p>
             </div>
-            <div className="card-body bg-light p-2">
-              <p>{post.description}</p>
-            </div>
-            
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/posts/${post._id}`}
             >
-              Join the posting on this Blog.
+              Join the discussion on this post.
             </Link>
           </div>
         ))}

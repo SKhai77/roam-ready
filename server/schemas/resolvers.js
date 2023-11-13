@@ -1,13 +1,13 @@
-const { User, Post } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Post } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('posts');
+      return User.find().populate("posts");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('posts');
+      return User.findOne({ username }).populate("posts");
     },
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -18,7 +18,7 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('posts');
+        return User.findOne({ _id: context.user._id }).populate("posts");
       }
       throw AuthenticationError;
     },
@@ -47,13 +47,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addPost: async (parent, { body }, context) => {
+    addPost: async (parent, { postTitle, postImage, postText }, context) => {
       if (context.user) {
         const post = await Post.create({
-          body,
-          user: User.id,
-          username: User.username,
-          createdAt: new Date().toISOString()
+          postTitle,
+          postImage,
+          postText,
+          postAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
@@ -64,55 +64,13 @@ const resolvers = {
         return post;
       }
       throw AuthenticationError;
-      ('You need to be logged in!');
-    },
-
-
-     likePost: async(parent, { postId }, context)=> {
-      if (context.user) {
-
-      const post = await Post.findById(postId);
-      if (post) {
-        if (post.likes.find((like) => like.username === username)) {
-          // Post already likes, unlike it
-          post.likes = post.likes.filter((like) => like.username !== username);
-        } else {
-          // Not liked, like post
-          post.likes.push({
-            username,
-            createdAt: new Date().toISOString()
-          });
-        }
-
-        await post.save();
-        return post;
-
-      } else throw new UserInputError('Post not found');
-    }throw AuthenticationError;
-    }
-  ,
-    createComment: async (parent, { postId, body }, context) => {
-      if (context.user) {
-        return Post.findOneAndUpdate(
-          { _id: postId },
-          {
-            $addToSet: {
-              comments: { body, commentAuthor: context.user.username },
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw AuthenticationError;
+      ("You need to be logged in!");
     },
     removePost: async (parent, { postId }, context) => {
       if (context.user) {
         const post = await Post.findOneAndDelete({
           _id: postId,
-          user: context.user.username,
+          postAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
@@ -124,6 +82,23 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    addComment: async (parent, { postId, commentText }, context) => {
+      if (context.user) {
+        return Post.findOneAndUpdate(
+          { _id: postId },
+          {
+            $addToSet: {
+              comments: { commentText, commentAuthor: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw AuthenticationError;
+    },
     removeComment: async (parent, { postId, commentId }, context) => {
       if (context.user) {
         return Post.findOneAndUpdate(
@@ -131,8 +106,43 @@ const resolvers = {
           {
             $pull: {
               comments: {
-                _id: postId,
+                _id: commentId,
                 commentAuthor: context.user.username,
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+
+    addLike: async (parent, { postId, likeText }, context) => {
+      if (context.user) {
+        return Post.findOneAndUpdate(
+          { _id: postId },
+          {
+            $addToSet: {
+              likes: { likeText, likeAuthor: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw AuthenticationError;
+    },
+    removeLike: async (parent, { postId, likeId }, context) => {
+      if (context.user) {
+        return Post.findOneAndUpdate(
+          { _id: postId },
+          {
+            $pull: {
+              likes: {
+                _id: likeId,
+                likeAuthor: context.user.username,
               },
             },
           },

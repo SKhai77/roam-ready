@@ -1,19 +1,26 @@
-const { model, Schema } = require('mongoose');
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const postSchema = new Schema({
-  title: {
+  postTitle: {
     type: String,
-    required: true,
+    required: "You need to give a title!",
+    minlength: 1,
+    maxlength: 280,
     trim: true,
   },
-  description: {
+  postImage: {
     type: String,
-    required: true,
     trim: true,
   },
-  image: {
+  postText: {
+    type: String,
+    required: "You need to leave a post!",
+    minlength: 1,
+    maxlength: 280,
+    trim: true,
+  },
+  postAuthor: {
     type: String,
     required: true,
     trim: true,
@@ -27,13 +34,11 @@ const postSchema = new Schema({
     {
       commentText: {
         type: String,
-        required: true,
         minlength: 1,
         maxlength: 280,
       },
       commentAuthor: {
         type: String,
-        required: true,
       },
       createdAt: {
         type: Date,
@@ -44,19 +49,21 @@ const postSchema = new Schema({
   ],
   likes: [
     {
-      username: String,
-      required: true,
-      trim: true,
-      createdAt: String
-    }
+      likeText: {
+        type: String,
+      },
+      likeAuthor: {
+        type: String,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+      },
+    },
   ],
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'users'
-  }
 });
 
-const Post = model('Thought', postSchema);
+const Post = model("Post", postSchema);
 
 module.exports = Post;
-
