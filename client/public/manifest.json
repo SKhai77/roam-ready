@@ -1,0 +1,22 @@
+{
+    "short_name": "RoamReady",
+    "name": "Roam Ready Travel Blog",
+    "icons": [
+      {
+        "src": "path/to/icon.png", 
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "path/to/large-icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000000"
+  }
+  
