@@ -1,52 +1,62 @@
 [
     {
-      "title":"Going to London!",
-      "description": "I'm going to London for the first time! I can't wait!",
-      "username": "JaneTheWanderer"
+      "postTitle":"Going to London!",
+      "postImage": "",
+      "postText": "I'm going to London for the first time! I can't wait!",
+      "postAuthor": "JaneTheWanderer"
     },
     {
-      "title":"Traveling For Work",
-      "description": "Here I will discuss the pros and cons of a job that requires constant travel.",
-      "username": "John Doe"
+      "postTitle":"Traveling For Work",
+      "postImage": "",
+      "postText": "Here I will discuss the pros and cons of a job that requires constant travel.",
+      "postAuthor": "John Doe"
     },
     {
-      "title":"what to bring on vacation ?",
-      "description": "need tips on what to take on trip to New Zealand",
-      "username": "jaime"
+      "postTitle":"what to bring on vacation?",
+      "postImage": "",
+      "postText": "need tips on what to take on trip to New Zealand",
+      "postAuthor": "jaime"
     },
     {
-      "title":"Jet Lag",
-      "description": "Tips on how to deal with jet lag?",
-      "username": "James"
+      "postTitle":"Jet Lag",
+      "postImage": "",
+      "postText": "Tips on how to deal with jet lag?",
+      "postAuthor": "James"
     },
     {
-      "title":"Studying Abroad",
-      "description": "I want to share the things I've learned studying abroad.",
-      "username": "greenerPastures"
+      "postTitle":"Studying Abroad",
+      "postImage": "",
+      "postText": "I want to share the things I've learned studying abroad.",
+      "postAuthor": "greenerPastures"
     },
     {
-      "title":"polyglot challenge",
-      "description": "I'm on a mission to learn at least one language from each country I visit!",
-      "username": "ashleyLovesLanguage"
+      "postTitle":"polyglot challenge",
+      "postImage": "",
+      "postText": "I'm on a mission to learn at least one language from each country I visit!",
+      "postAuthor": "ashleyLovesLanguage"
     },
     {
-      "title":"fear of flying",
-      "description": "I'm getting on my first plane in a week. Any tips to calm nerves?",
-      "username": "Lisa Conner"
+      "postTitle":"fear of flying",
+      "postImage": "",
+      "postText": "I'm getting on my first plane in a week. Any tips to calm nerves?",
+      "postAuthor": "Lisa Conner"
     },
     {
-      "title":"Massive Culture Shock",
-      "description": "Here are some of the biggest culture shocks shared by users like you!",
-      "username": "CultureCounty"
+      "postTitle":"Massive Culture Shock",
+      "postImage": "",
+      "postText": "Here are some of the biggest culture shocks shared by users like you!",
+      "postAuthor": "CultureCounty"
     },
     {
-      "title":"Max travel time?",
-      "description": "How far are you willing to travel and for how many hours?",
-      "username": "callMeAlex"
+      "postTitle":"Max travel time?",
+      "postImage": "",
+      "postText": "How far are you willing to travel and for how many hours?",
+      "postAuthor": "callMeAlex"
     },
     {
-      "title":"Traveling Woes",
-      "description": "Airport lost my luggage... again.",
-      "username": "TaylorTravels"
+      "postTitle":"Traveling Woes",
+      "postImage": "",
+      "postText": "Airport lost my luggage... again.",
+      "postAuthor": "TaylorTravels"
     }
   ]
