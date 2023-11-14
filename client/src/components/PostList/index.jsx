@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const PostList = ({
   posts,
   title,
-  showTitle = true,
-  showUsername = true,
+  showTitle,
+  showUsername,
 }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
@@ -37,6 +37,7 @@ const PostList = ({
             </h4>
             <div className="card-body bg-light p-2">
               <p>{post.postImage}</p>
+              <img src={post.postImage}className="img-destination" alt={post.title}/>
               <p>{post.postText}</p>
             </div>
             <Link
