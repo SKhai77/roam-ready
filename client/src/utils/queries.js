@@ -1,5 +1,4 @@
-import { gql } from '@apollo/client';
-
+import { gql } from "@apollo/client";
 // Query to get a single user's data
 export const QUERY_USER = gql`
   query user($username: String!) {
@@ -17,7 +16,6 @@ export const QUERY_USER = gql`
     }
   }
 `;
-
 // Query to get multiple posts
 export const QUERY_POSTS = gql`
   query getPosts {
@@ -31,7 +29,6 @@ export const QUERY_POSTS = gql`
     }
   }
 `;
-
 // Query to get a single post
 export const QUERY_SINGLE_POST = gql`
   query getSinglePost($postId: ID!) {
@@ -47,7 +44,7 @@ export const QUERY_SINGLE_POST = gql`
         commentText
         commentAuthor
         createdAt
-      },
+      }
       likes {
         _id
         likeText
@@ -57,7 +54,6 @@ export const QUERY_SINGLE_POST = gql`
     }
   }
 `;
-
 // Query to get the logged-in user's data
 export const QUERY_ME = gql`
   query me {
@@ -76,4 +72,3 @@ export const QUERY_ME = gql`
     }
   }
 `;
-
