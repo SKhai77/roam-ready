@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 
-const PostList = ({
-  posts,
-  title,
-  showTitle = true,
-  showUsername = true,
-}) => {
+const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
@@ -22,9 +17,10 @@ const PostList = ({
                   className="text-light"
                   to={`/profiles/${post.postAuthor}`}
                 >
-                  {post.postAuthor} <br />
+                  {post.postTitle} <br />
+                  <span style={{ fontSize: "1.2rem" }}>{post.postAuthor}</span>
                   <span style={{ fontSize: "1rem" }}>
-                    had this post on {post.createdAt}
+                    , had this post on {post.createdAt}
                   </span>
                 </Link>
               ) : (
@@ -37,6 +33,7 @@ const PostList = ({
             </h4>
             <div className="card-body bg-light p-2">
               <p>{post.postImage}</p>
+              <img src={post.postImage} className="d-none" alt={post.title} />
               <p>{post.postText}</p>
             </div>
             <Link
