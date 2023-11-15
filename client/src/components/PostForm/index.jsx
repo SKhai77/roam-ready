@@ -57,10 +57,8 @@ const PostForm = () => {
       setPostImage(value);
     } else if (name === "postCity" ) {
       setPostCity(value);
-    //setCharacterCount(value.length);
     } else if (name === "postState" ) {
       setPostState(value);
-    //setCharacterCount(value.length);
     }
   };
 
