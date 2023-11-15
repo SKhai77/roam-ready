@@ -25,7 +25,7 @@ const Footer = () => {
           
             ❤️
           </span>{' '}
-          by the Roam-ready team.
+          by the Roam-Ready team.
         </h4>
       </div>
     </footer>
