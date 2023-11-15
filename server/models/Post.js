@@ -20,6 +20,20 @@ const postSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
+  postState: {
+    type: String,
+    required: "Please assign a related location!",
+    minlength: 1,
+    maxlength: 280,
+    trim: true,
+  },
+  postCity: {
+    type: String,
+    required: "Please assign a related location!",
+    minlength: 1,
+    maxlength: 280,
+    trim: true,
+  },
   postAuthor: {
     type: String,
     required: true,

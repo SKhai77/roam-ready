@@ -3,60 +3,80 @@
       "postTitle":"Going to London!",
       "postImage": "",
       "postText": "I'm going to London for the first time! I can't wait!",
+      "postCity": "New York City",
+      "postState": "New York",
       "postAuthor": "JaneTheWanderer"
     },
     {
       "postTitle":"Traveling For Work",
       "postImage": "",
       "postText": "Here I will discuss the pros and cons of a job that requires constant travel.",
+      "postCity": "Houston",
+      "postState": "Texas",
       "postAuthor": "John Doe"
     },
     {
       "postTitle":"what to bring on vacation?",
       "postImage": "",
       "postText": "need tips on what to take on trip to New Zealand",
+      "postCity": "Seattle",
+      "postState": "Washington",
       "postAuthor": "jaime"
     },
     {
       "postTitle":"Jet Lag",
       "postImage": "",
       "postText": "Tips on how to deal with jet lag?",
+      "postCity": "Seattle",
+      "postState": "Washington",
       "postAuthor": "James"
     },
     {
       "postTitle":"Studying Abroad",
       "postImage": "",
       "postText": "I want to share the things I've learned studying abroad.",
-      "postAuthor": "greenerPastures"
+      "postAuthor": "greenerPastures",
+      "postCity": "Seattle",
+      "postState": "Washington"
     },
     {
       "postTitle":"polyglot challenge",
       "postImage": "",
       "postText": "I'm on a mission to learn at least one language from each country I visit!",
+      "postCity": "Houston",
+      "postState": "Texas",
       "postAuthor": "ashleyLovesLanguage"
     },
     {
       "postTitle":"fear of flying",
       "postImage": "",
       "postText": "I'm getting on my first plane in a week. Any tips to calm nerves?",
+      "postCity": "New York City",
+      "postState": "New York",
       "postAuthor": "Lisa Conner"
     },
     {
       "postTitle":"Massive Culture Shock",
       "postImage": "",
       "postText": "Here are some of the biggest culture shocks shared by users like you!",
+      "postCity": "Seattle",
+      "postState": "Washington",
       "postAuthor": "CultureCounty"
     },
     {
       "postTitle":"Max travel time?",
       "postImage": "",
       "postText": "How far are you willing to travel and for how many hours?",
+      "postCity": "Seattle",
+      "postState": "Washington",
       "postAuthor": "callMeAlex"
     },
     {
       "postTitle":"Traveling Woes",
       "postImage": "",
       "postText": "Airport lost my luggage... again.",
+      "postCity": "New York City",
+      "postState": "New York",
       "postAuthor": "TaylorTravels"
     }
   ]

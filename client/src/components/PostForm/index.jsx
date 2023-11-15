@@ -11,6 +11,8 @@ const PostForm = () => {
   const [postTitle, setPostTitle] = useState("");
   const [postImage, setPostImage] = useState("");
   const [postText, setPostText] = useState("");
+  const [postCity, setPostCity] = useState("");
+  const [postState, setPostState] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -27,6 +29,8 @@ const PostForm = () => {
           postTitle,
           postImage,
           postText,
+          postCity,
+          postState,
           postAuthor: Auth.getProfile().data.username,
         },
       });
@@ -34,6 +38,8 @@ const PostForm = () => {
       setPostTitle("");
       setPostImage("");
       setPostText("");
+      setPostCity("");
+      setPostState("");
     } catch (err) {
       console.error(err);
     }
@@ -49,8 +55,15 @@ const PostForm = () => {
       setPostTitle(value);
     } else if (name === "postImage") {
       setPostImage(value);
+    } else if (name === "postCity" ) {
+      setPostCity(value);
+    //setCharacterCount(value.length);
+    } else if (name === "postState" ) {
+      setPostState(value);
+    //setCharacterCount(value.length);
     }
   };
+
 
   return (
     <div>
@@ -102,6 +115,31 @@ const PostForm = () => {
                 onChange={handleChange}
               ></textarea>
             </div>
+
+
+            <div className="col-12 col-lg-6">
+              <input
+                type="text"
+                name="postCity"
+                placeholder="City"
+                value={postCity}
+                className="form-input w-100"
+                onChange={handleChange}
+              />
+            </div>
+
+            
+            <div className="col-12 col-lg-6">
+              <input
+                type="text"
+                name="postState"
+                placeholder="State"
+                value={postState}
+                className="form-input w-100"
+                onChange={handleChange}
+              />
+            </div>
+
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
