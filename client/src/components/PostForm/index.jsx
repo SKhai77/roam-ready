@@ -53,8 +53,8 @@ const PostForm = () => {
   };
 
   return (
-    <div>
-      <h3>Wants to share your travel experience?</h3>
+    <div class="front-page">
+      <h3>Want to share your travel experience?</h3>
 
       {Auth.loggedIn() ? (
         <>
