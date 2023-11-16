@@ -32,7 +32,7 @@ const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{post.postImage}</p>
+            
               <img src={post.postImage} className="img-destination" alt={post.title} />
               <p>{post.postText}</p>
             </div>
