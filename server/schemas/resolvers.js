@@ -60,6 +60,7 @@ const resolvers = {
           { _id: context.user._id },
           { $addToSet: { posts: post._id } }
         );
+       
 
         return post;
       }
@@ -77,6 +78,7 @@ const resolvers = {
           { _id: context.user._id },
           { $pull: { posts: post._id } }
         );
+        
 
         return post;
       }
