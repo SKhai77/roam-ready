@@ -15,17 +15,8 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-          
-            ❤️
-          </span>{' '}
-          by the Roam-Ready team.
+          Created{' '}
+          by the Roam-ready team.
         </h4>
       </div>
     </footer>
