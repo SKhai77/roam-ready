@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const postSchema = new Schema({
+postSchema = new Schema({
   postTitle: {
     type: String,
     required: "You need to give a title!",
@@ -34,11 +34,13 @@ const postSchema = new Schema({
     {
       commentText: {
         type: String,
+        required: true,
         minlength: 1,
         maxlength: 280,
       },
       commentAuthor: {
         type: String,
+        required: true,
       },
       createdAt: {
         type: Date,
