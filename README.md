@@ -116,7 +116,7 @@ Contributions are welcome! To contribute to this project, please follow these st
 
 ## Questions
 
-If you have any questions or need further assistance, feel free to reach out:
+If you have any questions or need further assistance, feel free to reach out the team:
 
 - GitHub Profile: [JuanFranciscoGrillo](#)
 - Email: [jfrgm1986@gmail.com](mailto:jfrgm1986@gmail.com)
