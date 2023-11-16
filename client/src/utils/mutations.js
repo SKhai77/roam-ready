@@ -31,7 +31,7 @@ export const ADD_POST = gql`
       postTitle
       postImage
       postText
-      posttAuthor
+      postAuthor
       createdAt
       comments {
         _id

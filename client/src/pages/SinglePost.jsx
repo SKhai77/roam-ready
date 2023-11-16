@@ -35,6 +35,7 @@ const SinglePost = () => {
       </h3>
       <div className="bg-light py-4">
         {post.postImage && (
+          
           <img
             src={post.postImage}
             alt={`Image for ${post.postTitle} by ${post.postAuthor}`}
