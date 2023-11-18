@@ -47,10 +47,10 @@ div {
 }
 
 h3 {
-    color: #2d3e50 !important;
+    color: #000 !important;
     font-weight: bold;
 }
 
-footer.bg-primary {
+footer.bg-secondary {
     background-color: #2d3e50 !important;
 }
