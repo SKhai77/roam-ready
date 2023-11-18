@@ -122,3 +122,8 @@ If you have any questions or need further assistance, feel free to reach out the
 - Email: [jfrgm1986@gmail.com](mailto:jfrgm1986@gmail.com)
 
 ## Demo
+
+- Visit the live website by [clicking here](https://roam-ready-79c746e8ffc3.herokuapp.com/).
+
+- The screenshot of `Roam Ready` Homepage:
+![Roam Ready Homepage Screenshot](./client/src/assets/screenshots/roam-ready.png)
