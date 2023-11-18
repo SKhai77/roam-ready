@@ -4,6 +4,8 @@ import { useQuery } from "@apollo/client";
 
 import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
+import {Container,Card}  from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { QUERY_SINGLE_POST } from "../utils/queries";
 
@@ -22,7 +24,11 @@ const SinglePost = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="my-3">
+    <Container fluid>
+      <Card>
+     
+    
+    <Card.Title>
       <h3 className="card-header bg-dark text-light p-2 m-0">
         <span className="postTitle">{post.postTitle}</span>
         <br />
@@ -33,15 +39,12 @@ const SinglePost = () => {
           had this blog post on {post.createdAt}
         </span>
       </h3>
-      <div className="bg-light py-4">
-        {post.postImage && (
-          
-          <img
-            src={post.postImage}
-            alt={`Image for ${post.postTitle} by ${post.postAuthor}`}
-            style={{ maxWidth: "100%" }}
-          />
-        )}
+      </Card.Title>
+      <Card.Img  src={post.postImage}
+            alt={`Image for ${post.postTitle} by ${post.postAuthor}`}>
+      
+       </Card.Img>
+       <Card.Text>
         <blockquote
           className="p-4"
           style={{
@@ -53,15 +56,20 @@ const SinglePost = () => {
         >
           {post.postText}
         </blockquote>
-      </div>
-
-      <div className="my-5">
+        </Card.Text>
+    
+      <Card.Footer>
+       
         <CommentList comments={post.comments} />
-      </div>
-      <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+ 
+ 
         <CommentForm postId={post._id} />
-      </div>
-    </div>
+
+      </Card.Footer>
+      </Card>
+   
+ 
+    </Container>
   );
 };
 
