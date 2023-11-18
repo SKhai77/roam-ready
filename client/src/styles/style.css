@@ -9,10 +9,13 @@ body {
     background-attachment: fixed;
 }
 
-h1,
-h4 {
+h1 {
     color: rgb(255, 255, 255);
     font-family: Atomic Age;
+}
+
+h4 {
+    color: rgb(255, 255, 255);
 }
 
 .m-0,
@@ -43,3 +46,11 @@ div {
     font-family: Inria Sans;
 }
 
+h3 {
+    color: #2d3e50 !important;
+    font-weight: bold;
+}
+
+footer.bg-primary {
+    background-color: #2d3e50 !important;
+}
